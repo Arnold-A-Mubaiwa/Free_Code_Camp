@@ -13,8 +13,15 @@ def arithmetic_arranger(problems,viewAnswer = False):
                 continue
             else:
                 print(i[x-1]," "*(big_v-len(i[x])-2),i[x],end='   ')
-        print()
-    
+        print("")
+    for i in v:
+        print("-"*(big_v+1), end='   ')
+    print()
+    for i in sum(v):
+        if viewAnswer==True:
+            print(" "*(big_v-len(str(i))),i,end='   ')
+    print()
+
 def the_big_length(value,indx=3):
     big = 0
     for x in range(indx):
@@ -22,5 +29,15 @@ def the_big_length(value,indx=3):
             if len(i[x])>big:
                 big=len(i[x])
         return big
+    
+def sum(value):
+    count = []
+    for x in range(len(value)):
+        for y in value[x]:
+            if y=='+':
+               count.insert(len(count),(int(value[x][0]))+int(value[x][2]))
+            elif y=='-':
+               count.insert(len(count),(int(value[x][0]))-int(value[x][2]))
+    return count       
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49444", "123 + 49444", "123 + 49444", "123 + 49444", "123 + 49444"])
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49444", "123 + 49444", "123 + 49444", "123 + 49444"],True)
