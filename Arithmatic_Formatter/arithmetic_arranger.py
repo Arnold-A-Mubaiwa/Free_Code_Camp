@@ -14,9 +14,11 @@ def arithmetic_arranger(problems,viewAnswer = False):
             else:
                 print(i[x-1]," "*(big_v-len(i[x])-2),i[x],end='   ')
         print("")
+        
     for i in v:
         print("-"*(big_v+1), end='   ')
     print()
+    
     for i in sum(v):
         if viewAnswer==True:
             print(" "*(big_v-len(str(i))),i,end='   ')
